@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Empathy Checker</title>
+    </head>
+
+    <body>
+        <h1>🧠 How Does This Sound?</h1>
+        <form method="post">
+            {% csrf_token %}
+            <textarea name="message" rows="6" cols="50" placeholder="Type your message here...">{{ message }}</textarea><br>
+            <button type="submit">Analyze Tone</button>
+        </form>
+
+        {% if sentiment %}
+        <h3>Analysis:</h3>
+        <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+        {% endif %}
+    </body>
+</html> 
